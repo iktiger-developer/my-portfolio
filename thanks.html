@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap');
+        
+        :root {
+            --neon-blue: #00f3ff;
+            --neon-pink: #ff00e6;
+            --neon-purple: #b400ff;
+            --dark-bg: #0a0a12;
+        }
+         /* Background Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            color: white;
+            background: url('https://i.ibb.co/dsytzBSQ/background-min.jpg') no-repeat center center fixed;
+            background-size: cover;
+            position: relative;
+        }
+        
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background-color: var(--dark-bg);
+            color: white;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        .neon-text {
+            text-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
+        }
+        
+        .glow-btn {
+            background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple));
+            box-shadow: 0 0 15px var(--neon-blue);
+            transition: all 0.3s ease;
+        }
+        
+        .glow-btn:hover {
+            box-shadow: 0 0 25px var(--neon-pink);
+            transform: translateY(-3px);
+        }
+         /* social media links */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .social-icons a img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .social-icons a:hover img {
+            transform: scale(1.2);
+            box-shadow: 0 0 10px gold;
+        }
+
+        .checkmark {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            display: block;
+            stroke-width: 6;
+            stroke: var(--neon-blue);
+            stroke-miterlimit: 10;
+            box-shadow: 0 0 20px var(--neon-blue);
+            animation: fill 0.6s ease-in-out forwards, scale 0.5s ease-in-out both;
+        }
+        
+        .checkmark__circle {
+            stroke-dasharray: 166;
+            stroke-dashoffset: 166;
+            stroke-width: 6;
+            stroke-miterlimit: 10;
+            stroke: var(--neon-blue);
+            fill: none;
+            animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+        }
+        
+        .checkmark__check {
+            transform-origin: 50% 50%;
+            stroke-dasharray: 48;
+            stroke-dashoffset: 48;
+            animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.6s forwards;
+        }
+        
+        @keyframes stroke {
+            100% { stroke-dashoffset: 0; }
+        }
+        
+        @keyframes scale {
+            0%, 100% { transform: none; }
+            50% { transform: scale3d(1.1, 1.1, 1); }
+        }
+        
+        @keyframes fill {
+            100% { box-shadow: 0 0 30px var(--neon-pink); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Content -->
+    <div class="min-h-screen flex flex-col items-center justify-center text-center px-4">
+        <!-- Animated Checkmark -->
+        <svg class="checkmark mb-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+            <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+            <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+        </svg>
+        
+        <!-- Thank You Message -->
+        <h1 class="text-4xl md:text-6xl font-bold neon-text mb-6">MESSAGE SENT!</h1>
+        <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">
+            Thanks for reaching out! I'll get back to you soon.<br>
+            <span class="text-neon-blue">Expect a response within 24 hours.</span>
+        </p>
+        
+        <!-- Return Button -->
+        <a href="index.html" class="glow-btn px-10 py-4 rounded-full text-black font-bold text-lg relative overflow-hidden group">
+            <span class="relative z-10">RETURN TO PORTFOLIO</span>
+            <span class="absolute inset-0 bg-gradient-to-r from-neon-blue to-neon-purple opacity-0 group-hover:opacity-100 transition-all duration-300"></span>
+        </a>
+        
+        <div class="social-icons">
+        <a href="https://www.facebook.com/share/1B3tHNzzQK/" target="_blank" title="Facebook">
+            <img src="https://i.ibb.co/QjHVNkjR/fb-icon.png" alt="fb-icon">
+        </a>
+        <a href="http://t.me/iktiger01" target="_blank" title="Telegram">
+            <img src="https://i.ibb.co/qYRvXRG9/telegran-icon.webp" alt="telegran-icon">
+        </a>
+        <a href="https://www.instagram.com/hasan_shah4242?igsh=anZsbmhvOTVmM3gz" target="_blank" title="Instagram">
+            <img src="https://i.ibb.co/CsnsZkV6/insta-icon.png" alt="insta-icon">
+        </a>
+        <a href="https://discord.gg/mFyB6Bd9" target="_blank" title="Discord">
+            <img src="https://i.ibb.co/xqPgR7CQ/discord-icon.png" alt="discord-icon">
+        </a>
+    </div>
+    </div>
+</body>
+</html>

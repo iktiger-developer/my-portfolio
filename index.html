@@ -30,28 +30,139 @@
             z-index: -1;
         }
 
-        /* Navigation */
-        nav ul {
-            background-image: linear-gradient(to right, purple, indigo);
-            list-style: none;
-            margin-top: 0;
-            height: 40px;
-            padding: 0;
-            width: 100%;
-            display: flex;
-            justify-content: right;
-            align-items: center;
-            gap: 20px;
+               /* Navigation bar - always visible */
+        .navbar {
             position: fixed;
             top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background-image: linear-gradient(to right, purple, indigo);
             z-index: 1000;
         }
 
-        nav a {
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            height: 100%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        /* Desktop menu - visible by default */
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 25px;
+        }
+
+        .nav-menu a {
             color: gold;
             text-decoration: none;
             font-weight: 600;
-            margin-right: 20px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: white;
+        }
+
+        /* Mobile hamburger button - hidden by default */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: transparent;
+            border: none;
+            padding: 10px;
+            z-index: 1001;
+        }
+
+        .hamburger-box {
+            width: 30px;
+            height: 24px;
+            display: inline-block;
+            position: relative;
+        }
+
+        .hamburger-inner {
+            width: 100%;
+            height: 3px;
+            background-color: gold;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: background-color 0.2s ease;
+        }
+
+        .hamburger-inner::before,
+        .hamburger-inner::after {
+            content: "";
+            width: 100%;
+            height: 3px;
+            background-color: gold;
+            position: absolute;
+            left: 0;
+            transition: transform 0.2s ease;
+        }
+
+        .hamburger-inner::before {
+            top: -8px;
+        }
+
+        .hamburger-inner::after {
+            top: 8px;
+        }
+
+        /* Mobile view */
+        @media (max-width: 768px) {
+
+            /* Hide desktop menu */
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 150px;
+                background-image:linear-gradient(to right purple, indigo);
+                flex-direction: column;
+                gap: 0;
+                padding: 20px 0;
+            }
+
+            /* Show mobile menu when active */
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .nav-menu li {
+                text-align: center;
+                padding: 12px 0;
+            }
+
+            /* Show hamburger button */
+            .hamburger {
+                display: block;
+            }
+
+            /* Transform hamburger into X when active */
+            .nav-menu.active+.hamburger .hamburger-inner {
+                background-color: transparent;
+            }
+
+            .nav-menu.active+.hamburger .hamburger-inner::before {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            .nav-menu.active+.hamburger .hamburger-inner::after {
+                transform: translateY(-8px) rotate(-45deg);
+            }
         }
         section {
             padding: 80px 20px;
@@ -510,15 +621,25 @@
 
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#certifications">Certifications</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+        <nav class="navbar">
+            <div class="nav-container">
+                <!-- Mobile hamburger button -->
+                <button class="hamburger" aria-label="Menu">
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
+                </button>
+
+                <!-- Navigation links -->
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
 
@@ -794,6 +915,23 @@
 
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+     <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+
+            hamburger.addEventListener('click', function () {
+                navMenu.classList.toggle('active');
+            });
+
+            // Close menu when clicking on a link
+            document.querySelectorAll('.nav-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
                 });
             });
         });

@@ -44,7 +44,7 @@
 <img src="https://i.postimg.cc/9f2kfpV6/ss-desktop3.png" width="45%" alt="Desktop View">
 <img src="https://i.postimg.cc/nhGyB5dF/ss-desktop4.png" width="45%" alt="Desktop View">
 <img src="https://i.postimg.cc/mDtKxrTk/ss-desktop5.png" width="45%" alt="Desktop View"><br><br><br>
-  <img src="https://i.postimg.cc/VvFQYV0H/mobile-view.jpg" width="45%" alt="Mobile View">
+  <img src="https://i.postimg.cc/hvjSJn87/mobile-view.gif" width="45%" alt="Mobile View">
 </div>
 
 ## 📬 Contact

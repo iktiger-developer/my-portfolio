@@ -45,9 +45,6 @@
             position: fixed;
             top: 0;
             z-index: 1000;
-            overflow-x: auto;
-            white-space: nowrap;
-            -webkit-overflow-scrolling: touch;
         }
 
         nav a {
@@ -55,15 +52,55 @@
             text-decoration: none;
             font-weight: 600;
             margin-right: 20px;
-             padding: 8px 12px;
-            font-size: 16px;
         }
-         @media (max-width: 768px) {
-            nav ul {
-                display: flex !important;
-                flex-wrap: nowrap !important;
-            }
-        }
+        #mobile-menu-button {
+    display: none;
+    position: fixed;
+    top: 5px;
+    right: 10px;
+    z-index: 1001;
+    background: transparent;
+    border: none;
+    color: gold;
+    cursor: pointer;
+}
+
+/* Mobile Menu (Dropdown) */
+#main-nav.active {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 40px;
+    right: 0;
+    width: 100%;
+    height: auto;
+    background: rgba(75, 0, 130, 0.95); /* Indigo with transparency */
+    padding: 10px 0;
+    gap: 0;
+}
+
+#main-nav.active li {
+    padding: 10px 20px;
+    text-align: center;
+}
+
+#main-nav.active a {
+    margin-right: 0;
+    display: block;
+}
+
+/* Media Query for Mobile */
+@media (max-width: 768px) {
+    /* Hide desktop nav by default */
+    #main-nav {
+        display: none;
+    }
+
+    /* Show hamburger button */
+    #mobile-menu-button {
+        display: block;
+    }
+}
 
         section {
             padding: 80px 20px;
@@ -523,7 +560,10 @@
 <body>
     <header>
         <nav>
-            <ul>
+             <button id="mobile-menu-button" class="md:hidden">
+            <i class="fas fa-bars text-2xl text-gold"></i>
+        </button>
+            <ul id="main-nav" class="hidden md:flex">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About Me</a></li>
                 <li><a href="#skills">Skills</a></li>

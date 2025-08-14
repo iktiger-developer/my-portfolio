@@ -53,50 +53,6 @@
             font-weight: 600;
             margin-right: 20px;
         }
-        /* Mobile Menu Button (Hidden on Desktop) */
-        .mobile-menu-btn {
-            display: none;
-            position: absolute;
-            right: 15px;
-            top: 8px;
-            background: transparent;
-            border: none;
-            color: gold;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-        
-        /* Mobile View */
-        @media (max-width: 768px) {
-            /* Hide navigation links */
-            #main-nav {
-                display: none;
-            }
-            
-            /* Show mobile menu button */
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            /* Show links when menu is active */
-            #main-nav.mobile-active {
-                display: flex;
-                flex-direction: column;
-                position: absolute;
-                top: 40px;
-                left: 0;
-                width: 100%;
-                background: rgba(75, 0, 130, 0.95);
-                padding: 10px 0;
-                gap: 0;
-            }
-            
-            #main-nav.mobile-active li {
-                padding: 10px 20px;
-                text-align: center;
-            }
-        }
-       
         section {
             padding: 80px 20px;
             position: relative;
@@ -563,9 +519,6 @@
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-              <button id="mobile-menu-button" class="mobile-menu-btn">
-            <i class="fas fa-bars"></i>
-        </button>
         </nav>
     </header>
 
@@ -845,21 +798,6 @@
             });
         });
     </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-        const menuButton = document.getElementById('mobile-menu-button');
-        const mainNav = document.getElementById('main-nav');
-        
-        menuButton.addEventListener('click', function() {
-            mainNav.classList.toggle('mobile-active');
-            
-            // Toggle between hamburger and close icon
-            const icon = this.querySelector('i');
-            icon.classList.toggle('fa-bars');
-            icon.classList.toggle('fa-times');
-        });
-    });
-  </script>
 </body>
 
 </html>

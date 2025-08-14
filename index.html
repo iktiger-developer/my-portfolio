@@ -54,53 +54,53 @@
             margin-right: 20px;
         }
         #mobile-menu-button {
-    display: none;
-    position: fixed;
-    top: 5px;
-    right: 10px;
-    z-index: 1001;
-    background: transparent;
-    border: none;
-    color: gold;
-    cursor: pointer;
-}
-
-/* Mobile Menu (Dropdown) */
-#main-nav.active {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 40px;
-    right: 0;
-    width: 100%;
-    height: auto;
-    background: rgba(75, 0, 130, 0.95); /* Indigo with transparency */
-    padding: 10px 0;
-    gap: 0;
-}
-
-#main-nav.active li {
-    padding: 10px 20px;
-    text-align: center;
-}
-
-#main-nav.active a {
-    margin-right: 0;
-    display: block;
-}
-
-/* Media Query for Mobile */
-@media (max-width: 768px) {
-    /* Hide desktop nav by default */
-    #main-nav {
         display: none;
-    }
+        position: fixed;
+        top: 5px;
+        right: 10px;
+        z-index: 1001;
+        background: transparent;
+        border: none;
+        color: gold;
+        cursor: pointer;
+        }
 
-    /* Show hamburger button */
-    #mobile-menu-button {
-        display: block;
-    }
-}
+        /* Mobile Menu (Dropdown) */
+        #main-nav.active {
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            top: 40px;
+            right: 0;
+            width: 100%;
+            height: auto;
+            background: rgba(75, 0, 130, 0.95); /* Indigo with transparency */
+            padding: 10px 0;
+            gap: 0;
+        }
+        
+        #main-nav.active li {
+            padding: 10px 20px;
+            text-align: center;
+        }
+        
+        #main-nav.active a {
+            margin-right: 0;
+            display: block;
+        }
+        
+        /* Media Query for Mobile */
+        @media (max-width: 768px) {
+            /* Hide desktop nav by default */
+            #main-nav {
+                display: none;
+            }
+        
+            /* Show hamburger button */
+            #mobile-menu-button {
+                display: block;
+            }
+        }
 
         section {
             padding: 80px 20px;
@@ -851,13 +851,35 @@
         });
     </script>
     <script>
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
+document.addEventListener('DOMContentLoaded', function() {
+    const menuButton = document.getElementById('mobile-menu-button');
     const mainNav = document.getElementById('main-nav');
-
-    mobileMenuButton.addEventListener('click', () => {
-        mainNav.classList.toggle('active');
+    
+    // Toggle menu on button click
+    menuButton.addEventListener('click', function(e) {
+        e.stopPropagation(); // Prevent event bubbling
+        mainNav.classList.toggle('mobile-active');
+        
+        // Change icon
+        const icon = this.querySelector('i');
+        if (mainNav.classList.contains('mobile-active')) {
+            icon.classList.replace('fa-bars', 'fa-times');
+        } else {
+            icon.classList.replace('fa-times', 'fa-bars');
+        }
     });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!mainNav.contains(e.target) {
+            mainNav.classList.remove('mobile-active');
+            const icon = menuButton.querySelector('i');
+            icon.classList.replace('fa-times', 'fa-bars');
+        }
+    });
+});
 </script>
+    
 </body>
 
 </html>

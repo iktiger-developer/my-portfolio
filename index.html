@@ -80,14 +80,16 @@
         }
 
         /* Mobile hamburger button - hidden by default */
-        .hamburger {
-            display: none;
-            cursor: pointer;
-            background: transparent;
+       .hamburger {
+            display: none; /* Hidden on desktop */
+            background: none;
             border: none;
+            cursor: pointer;
             padding: 10px;
-            z-index: 1001;
-        }
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
 
         .hamburger-box {
             width: 30px;
@@ -653,7 +655,7 @@
             </div>
             <div class="nav-container">
                 <!-- Mobile hamburger button -->
-                <button class="hamburger" aria-label="Menu">
+                <button class="hamburger" aria-label="Menu" margin-top="0">
                     <span class="hamburger-box">
                         <span class="hamburger-inner"></span>
                     </span>

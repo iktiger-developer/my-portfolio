@@ -38,8 +38,8 @@
 ## 📸 Screenshots
 
 <div align="center">
-  <img src="screenshots/desktop-view.png" width="45%" alt="Desktop View">
-  <img src="screenshots/mobile-view.png" width="45%" alt="Mobile View">
+  <img src="https://i.postimg.cc/XvNZ3RZt/desktop-view.png" width="45%" alt="Desktop View">
+  <img src="https://i.postimg.cc/VvFQYV0H/mobile-view.jpg" width="45%" alt="Mobile View">
 </div>
 
 ## 📬 Contact

@@ -36,29 +36,26 @@
             z-index: -1;
         }
 
-               /* Navigation bar - always visible */
-        .navbar {
+          .navbar {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
+            display: flex;
+            /* Align logo and nav horizontally */
             justify-content: space-between;
-            padding: 0 20px;
+            /* Logo left, nav right */
             align-items: center;
+            padding: 0 20px;
             height: 60px;
             background-image: linear-gradient(to right, purple, indigo);
             z-index: 1000;
         }
 
         .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            height: 100%;
             display: flex;
-            justify-content: flex-end;
             align-items: center;
-            padding: 0 20px;
-            position: relative;
+            gap: 20px;
         }
 
         /* Desktop menu - visible by default */
@@ -67,8 +64,6 @@
             list-style: none;
             margin: 0;
             padding: 0;
-            margin-left: 600px;
-            margin-right: 0%;
             gap: 25px;
         }
 
@@ -85,19 +80,20 @@
         }
 
         /* Mobile hamburger button - hidden by default */
-       .hamburger {
-            display: none; /* Hidden on desktop */
+        .hamburger {
+            display: none;
             background: none;
             border: none;
             cursor: pointer;
-            padding: 10px;
+            padding: 0;
             position: relative;
+            margin-top: 30px;
             right: 10px;
             top: 50%;
-            margin-left: 400px; 
+            margin-left: auto;
             transform: translateY(-50%);
-            
-     }
+
+        }
 
         .hamburger-box {
             width: 30px;
@@ -180,6 +176,7 @@
                 transform: translateY(-8px) rotate(-45deg);
             }
         }
+
          /* Logo Styles */
         .logo {
             height: 100%;
@@ -653,36 +650,36 @@
 </head>
 
 <body>
-    <header>
-        <nav class="navbar">
-            <!-- Logo on the left -->
-            <div class="logo">
-                <a href="#home">
-                    <img src="https://i.postimg.cc/YSXPPR3H/logo.png" alt="Hasan Shah Logo">
-                </a>
-            
-            <div class="nav-container">
-                <!-- Mobile hamburger button -->
-                <button class="hamburger" aria-label="Menu" margin-top="0">
-                    <span class="hamburger-box">
-                        <span class="hamburger-inner"></span>
-                    </span>
-                </button>
+     <header>
+    <nav class="navbar">
+        <!-- Logo on the left -->
+        <div class="logo">
+            <a href="#home">
+                <img src="https://i.postimg.cc/YSXPPR3H/logo.png" alt="Hasan Shah Logo">
+            </a>
+        </div>
 
-                <!-- Navigation links -->
-                <ul class="nav-menu">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About Me</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#certifications">Certifications</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-                </div>
-        </nav>
-    </header>
+        <!-- Navigation & Hamburger on the right -->
+        <div class="nav-container">
+            <!-- Navigation links -->
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
 
+            <!-- Mobile hamburger button -->
+            <button class="hamburger" aria-label="Menu">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </button>
+        </div>
+    </nav>
+</header>
     <!-- Hero Section -->
     <section id="home" style="padding-top: 100px;">
         <div class="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
